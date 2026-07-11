@@ -1,0 +1,31 @@
+.category-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+    background: #f8f9fa;
+    margin-top: 10px;
+}
+
+.category-navbar button {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 25px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3;
+}
+
+.category-navbar button:hover {
+    background-color: #007bff;
+    transform: translateY(-2px);
+}
