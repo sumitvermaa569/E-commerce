@@ -9,43 +9,57 @@ function SideCart({
   decreaseQuantity,
   removeItem,
   totalPrice,
-})  {
-        if (!showCart) return null;
+}) {
+  if (!showCart) return null;
 
   return (
     <div className="cart-sidebar">
-      <button onClick={() => setShowCart(false)}>✕</button>
+      <button className="cross-button" onClick={() => setShowCart(false)}>
+        ✕
+      </button>
 
       {cart.length === 0 ? (
-        // If Cart is empty
         <div className="empty-cart">
           <h2>Your Cart is Empty</h2>
-          <button>Browse Products</button>
+          <button className="browse-btn" onClick={() => setShowCart(false)}>Browse Products</button>
         </div>
       ) : (
-        // Id Cart has Products
-        <div>
-          {cart.map((item) => (
-            <div key={item.id}>
-              <h3>{item.name}</h3>
-              <p>{item.price}</p>
+        <>
+          <div className="cart-items">
+            {cart.map((item) => (
+              <div className="cart-item" key={item.id}>
+                <div className="item-details">
+                  <h3>{item.name}</h3>
+                  <p>₹{item.price}</p>
 
-              <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                  <div className="quantity-box">
+                    <button onClick={() => decreaseQuantity(item.id)}>-</button>
 
-              <span>{item.quantity}</span>
+                    <span>{item.quantity}</span>
 
-              <button onClick={() => increaseQuantity(item.id)}>+</button>
+                    <button onClick={() => increaseQuantity(item.id)}>+</button>
+                  </div>
 
-              <button onClick={() => removeItem(item.id)}>Remove</button>
-            </div>
-          ))}
+                  <button
+                    className="remove-btn"
+                    onClick={() => removeItem(item.id)}
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
 
-<h2>Total: ₹{totalPrice}</h2>
-  <button>Checkout</button>
-        </div>
-        
+          <div className="cart-footer">
+            <h2>Total: ₹{totalPrice}</h2>
+
+            <button className="checkout-btn">Checkout</button>
+          </div>
+        </>
       )}
     </div>
   );
 }
 export default SideCart;
+    
