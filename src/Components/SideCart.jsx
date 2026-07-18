@@ -9,6 +9,7 @@ function SideCart({
   decreaseQuantity,
   removeItem,
   totalPrice,
+  clearCart,
 }) {
   if (!showCart) return null;
 
@@ -21,7 +22,9 @@ function SideCart({
       {cart.length === 0 ? (
         <div className="empty-cart">
           <h2>Your Cart is Empty</h2>
-          <button className="browse-btn" onClick={() => setShowCart(false)}>Browse Products</button>
+          <button className="browse-btn" onClick={() => setShowCart(false)}>
+            Browse Products
+          </button>
         </div>
       ) : (
         <>
@@ -55,6 +58,9 @@ function SideCart({
             <h2>Total: ₹{totalPrice}</h2>
 
             <button className="checkout-btn">Checkout</button>
+            <button className="clear-btn" onClick={clearCart}>
+              Clear Cart
+            </button>
           </div>
         </>
       )}
@@ -62,4 +68,3 @@ function SideCart({
   );
 }
 export default SideCart;
-    

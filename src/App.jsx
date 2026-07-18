@@ -10,24 +10,26 @@ function App() {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
 
-console.log(cart);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  console.log(cart);
   const addToCart = (product) => {
-  console.log("Added:", product);
+    console.log("Added:", product);
 
-  const existingItem = cart.find((item) => item.id === product.id);
+    const existingItem = cart.find((item) => item.id === product.id);
 
-  if (existingItem) {
-    setCart(
-      cart.map((item) =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      )
-    );
-  } else {
-    setCart([...cart, { ...product, quantity: 1 }]);
-  }
-};
+    if (existingItem) {
+      setCart(
+        cart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
+        ),
+      );
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+  };
 
   const increaseQuantity = (id) => {
     setCart(
@@ -51,19 +53,30 @@ console.log(cart);
     setCart(cart.filter((item) => item.id != id));
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0,
   );
 
+  const filteredProducts =
+    selectedCategory == "all"
+      ? product
+      : product.filter((item) => item.category === selectedCategory);
+
   return (
     <>
       <Navbar setShowCart={setShowCart} />
-      <CategoryNavbar />
+
+      <CategoryNavbar setSelectedCategory={setSelectedCategory} />
+
       <h1 className="Heading">All Products</h1>
 
       <div className="products">
-        {product.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard
             key={product.id}
             product={product}
@@ -73,13 +86,14 @@ console.log(cart);
       </div>
 
       <SideCart
-         cart={cart}
-  showCart={showCart}
-  setShowCart={setShowCart}
-  increaseQuantity={increaseQuantity}
-  decreaseQuantity={decreaseQuantity}
-  removeItem={removeItem}
-  totalPrice={totalPrice}
+        cart={cart}
+        showCart={showCart}
+        setShowCart={setShowCart}
+        increaseQuantity={increaseQuantity}
+        decreaseQuantity={decreaseQuantity}
+        removeItem={removeItem}
+        totalPrice={totalPrice}
+        clearCart={clearCart}
       />
     </>
   );

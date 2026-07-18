@@ -161,3 +161,18 @@
 .checkout-btn:hover {
     background: #218838;
 }
+
+.clear-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #f0efef;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.clear-btn:hover {
+    background: #e2e0e0;
+}
