@@ -11,8 +11,9 @@ function App() {
   const [showCart, setShowCart] = useState(false);
 
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchTerm, setSearchTerm] = useState("");
+const [searchInput, setSearchInput] = useState("");
 
-  console.log(cart);
   const addToCart = (product) => {
     console.log("Added:", product);
 
@@ -62,27 +63,47 @@ function App() {
     0,
   );
 
-  const filteredProducts =
-    selectedCategory == "all"
-      ? product
-      : product.filter((item) => item.category === selectedCategory);
+ const filteredProducts = product.filter((item) => {
+  const matchesCategory =
+    selectedCategory === "all" ||
+    item.category === selectedCategory;
+
+  const search = searchTerm.toLowerCase();
+
+const matchesSearch =
+  item.name.toLowerCase().includes(search) ||
+  item.category.toLowerCase().includes(search) ||
+  item.description.toLowerCase().includes(search);
+
+  return matchesCategory && matchesSearch;
+});
 
   return (
     <>
-      <Navbar setShowCart={setShowCart} />
+      <Navbar
+        setShowCart={setShowCart}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}   
+         searchInput={searchInput}
+  setSearchInput={setSearchInput}
+      />
 
       <CategoryNavbar setSelectedCategory={setSelectedCategory} />
 
       <h1 className="Heading">All Products</h1>
 
       <div className="products">
-        {filteredProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            addToCart={addToCart}
-          />
-        ))}
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              addToCart={addToCart}
+            />
+          ))
+        ) : (
+          <h2>No Product Found</h2>
+        )}
       </div>
 
       <SideCart

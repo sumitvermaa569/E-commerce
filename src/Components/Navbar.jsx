@@ -2,7 +2,13 @@ import React from "react";
 import "./Navbar.css";
 import logo2 from "../assets/logo2.png";
 
-function Navbar({ setShowCart }) {
+function Navbar({
+  setShowCart,
+  searchTerm,
+  setSearchTerm,
+  searchInput,
+  setSearchInput,
+}) {
   return (
     <nav className="navbar">
       {/* Left section */}
@@ -13,21 +19,43 @@ function Navbar({ setShowCart }) {
 
       {/* Middle section */}
       <div className="search-section">
-        <input type="text" placeholder="Search Products" />
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search Products"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
 
-        <button>
+          {searchInput && (
+            <span
+              className="clear-icon"
+              onClick={() => {
+                setSearchInput("");
+                setSearchTerm("");
+              }}
+            >
+              ✕
+            </span>
+          )}
+        </div>
+
+        <button
+          className="search-btn"
+          onClick={() => setSearchTerm(searchInput)}
+        >
           <i className="bi bi-search"></i>
         </button>
       </div>
 
       {/* Right section */}
-      <div className="cart-section" >
+      <div className="cart-section">
         <button
-  onClick={() => {
-    console.log("Cart clicked");
-    setShowCart(true);
-  }}
->
+          onClick={() => {
+            console.log("Cart clicked");
+            setShowCart(true);
+          }}
+        >
           {" "}
           <i className="bi bi-cart3"></i>
         </button>

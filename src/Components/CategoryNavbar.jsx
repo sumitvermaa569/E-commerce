@@ -8,7 +8,7 @@ function CategoryNavbar({ setSelectedCategory }) {
       <button onClick={() => setSelectedCategory("stationery")}>
         Stationery items
       </button>
-      <button onClick={() => setSelectedCategory("food-drinks")}>
+      <button onClick={() => setSelectedCategory("food & drinks")}>
         Food & Drinks
       </button>
       <button onClick={() => setSelectedCategory("icecream")}>
