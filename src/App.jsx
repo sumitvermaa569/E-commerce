@@ -3,11 +3,8 @@ import { Routes, Route } from "react-router-dom";
 
 import { useState } from "react";
 import { useEffect } from "react";
-
 import products from "./data/products";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 

@@ -26,16 +26,13 @@ function Home({
   return (
     <>
       <Navbar
-        setShowCart={setShowCart}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        searchInput={searchInput}
-        setSearchInput={setSearchInput}
-        cart={cart}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        
-      />
+  setShowCart={setShowCart}
+  searchTerm={searchTerm}
+  setSearchTerm={setSearchTerm}
+  searchInput={searchInput}
+  setSearchInput={setSearchInput}
+  cart={cart}
+/>
 
       {!searchTerm && <Hero />}
 

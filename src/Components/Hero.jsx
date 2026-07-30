@@ -1,6 +1,6 @@
 import "./Hero.css";
 import { Link } from "react-router-dom";
-import heroImage from "../assets/Hero-img.png";
+import Heroimg from "../assets/Heroimg.png";
 
 function Hero() {
   return (
@@ -72,7 +72,7 @@ function Hero() {
 
       {/* Right Side */}
       <div className="hero-right">
-        <img src={heroImage} alt="Pakhetra Mart Hero" />
+        <img src={Heroimg} alt="Pakhetra Mart Hero" />
       </div>
     </section>
   );
