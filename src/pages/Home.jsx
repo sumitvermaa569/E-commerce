@@ -10,8 +10,8 @@ function Home({
   setShowCart,
   searchTerm,
   setSearchTerm,
-searchInput,
-setSearchInput,
+  searchInput,
+  setSearchInput,
   selectedCategory,
   setSelectedCategory,
   filteredProducts,
@@ -22,7 +22,6 @@ setSearchInput,
   removeItem,
   totalPrice,
   clearCart,
-
 }) {
   return (
     <>
@@ -35,8 +34,8 @@ setSearchInput,
         cart={cart}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-searchInput={searchInput}
-  setSearchInput={setSearchInput}
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
       />
 
       {!searchTerm && <Hero />}
@@ -60,10 +59,10 @@ searchInput={searchInput}
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <ProductCard
-  key={product.id}
-  product={product}
-  addToCart={addToCart}
-/>
+              key={product.id}
+              product={product}
+              addToCart={addToCart}
+            />
           ))
         ) : (
           <h2>No Product Found</h2>
