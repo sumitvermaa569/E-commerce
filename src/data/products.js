@@ -44,7 +44,7 @@ import watercolor from "../assets/Stationery/watercolor.webp";
 
 
 
-const product = [{
+const products = [{
         // Stationery Products
         id: 1,
         name: "Small Notebook",
@@ -364,4 +364,4 @@ const product = [{
     }
 ];
 
-export default product;
+export default products;

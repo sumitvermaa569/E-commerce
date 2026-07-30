@@ -1,10 +1,15 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
 import { useState } from "react";
-import Navbar from "./Components/Navbar";
-import CategoryNavbar from "./Components/CategoryNavbar";
-import ProductCard from "./Components/ProductCard";
-import product from "./Data/product";
-import SideCart from "./Components/SideCart";
+import { useEffect } from "react";
+
+import products from "./data/products";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Cart from "./pages/Cart";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -12,7 +17,9 @@ function App() {
 
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
-const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+
+
 
   const addToCart = (product) => {
     console.log("Added:", product);
@@ -63,59 +70,44 @@ const [searchInput, setSearchInput] = useState("");
     0,
   );
 
- const filteredProducts = product.filter((item) => {
-  const matchesCategory =
-    selectedCategory === "all" ||
-    item.category === selectedCategory;
+  const filteredProducts = products.filter((product) => {
+    const search = searchTerm.toLowerCase();
 
-  const search = searchTerm.toLowerCase();
-
-const matchesSearch =
-  item.name.toLowerCase().includes(search) ||
-  item.category.toLowerCase().includes(search) ||
-  item.description.toLowerCase().includes(search);
-
-  return matchesCategory && matchesSearch;
-});
+    return (
+      product.name.toLowerCase().includes(search) ||
+      product.category.toLowerCase().includes(search)
+    );
+  });
 
   return (
     <>
-      <Navbar
-        setShowCart={setShowCart}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}   
-         searchInput={searchInput}
-  setSearchInput={setSearchInput}
-      />
-
-      <CategoryNavbar setSelectedCategory={setSelectedCategory} />
-
-      <h1 className="Heading">All Products</h1>
-
-      <div className="products">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              cart={cart}
+              setShowCart={setShowCart}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+              filteredProducts={filteredProducts}
               addToCart={addToCart}
+              showCart={showCart}
+              increaseQuantity={increaseQuantity}
+              decreaseQuantity={decreaseQuantity}
+              removeItem={removeItem}
+              totalPrice={totalPrice}
+              clearCart={clearCart}
             />
-          ))
-        ) : (
-          <h2>No Product Found</h2>
-        )}
-      </div>
-
-      <SideCart
-        cart={cart}
-        showCart={showCart}
-        setShowCart={setShowCart}
-        increaseQuantity={increaseQuantity}
-        decreaseQuantity={decreaseQuantity}
-        removeItem={removeItem}
-        totalPrice={totalPrice}
-        clearCart={clearCart}
-      />
+          }
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </>
   );
 }

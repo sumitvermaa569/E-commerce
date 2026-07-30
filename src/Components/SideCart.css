@@ -176,3 +176,9 @@
 .clear-btn:hover {
     background: #e2e0e0;
 }
+
+@media(max-width:768px) {
+    .side-cart {
+        width: 100%;
+    }
+}

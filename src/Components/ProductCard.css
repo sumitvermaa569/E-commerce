@@ -93,3 +93,15 @@
 .add-btn:hover {
     background: #ff5722;
 }
+
+@media (max-width:768px) {
+    .product-card {
+        width: 100%;
+        max-width: 280px;
+        margin: auto;
+    }
+    .product-card img {
+        width: 100%;
+        height: auto;
+    }
+}
