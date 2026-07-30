@@ -34,8 +34,7 @@ function Home({
         cart={cart}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-        searchInput={searchInput}
-        setSearchInput={setSearchInput}
+        
       />
 
       {!searchTerm && <Hero />}
