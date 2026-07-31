@@ -16,23 +16,30 @@
 
 .contact-home-btn {
     position: absolute;
-    top: 30px;
-    left: 40px;
+    top: 20px;
+    left: 30px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     text-decoration: none;
-    background: #198754;
     color: white;
-    padding: 12px 22px;
-    border-radius: 10px;
+    background: #198754;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
     font-weight: 600;
-    transition: .3s;
+    transition: 0.3s;
+    z-index: 10;
 }
 
 .contact-home-btn:hover {
     background: #146c43;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+}
+
+.contact-home-btn:hover {
+    background: #146c43;
+    transform: translateY(-2px);
 }
 
 
@@ -206,6 +213,12 @@ Mobile
 @media(max-width:768px) {
     .contact-page {
         padding: 80px 20px 40px;
+    }
+    .contact-home-btn {
+        top: 15px;
+        left: 15px;
+        padding: 8px 12px;
+        font-size: 14px;
     }
     .contact-header {
         margin-bottom: 40px;

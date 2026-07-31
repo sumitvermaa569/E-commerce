@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.home-btn {
+.login-home-btn {
     position: absolute;
     top: 20px;
     left: 30px;
@@ -19,18 +19,19 @@
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    background: white;
-    padding: 10px 16px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: .3s;
-}
-
-.home-btn:hover {
     color: white;
     background: #198754;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.login-home-btn:hover {
+    background: #146c43;
+    transform: translateY(-2px);
 }
 
 .login-card {
@@ -218,7 +219,7 @@
 }
 
 @media (max-width:768px) {
-    .home-btn {
+    .login-home-btn {
         top: 15px;
         left: 15px;
         padding: 8px 12px;

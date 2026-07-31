@@ -6,7 +6,7 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="login-container">
-       <Link to="/" className="home-btn">
+       <Link to="/" className="login-home-btn">
     <i className="bi bi-arrow-left"></i>
     Back to Home
   </Link>
