@@ -8,7 +8,7 @@ function Contact() {
     <div className="contact-page">
 
       {/* Back to Home Button */}
-      <Link to="/" className="home-btn">
+      <Link to="/" className="contact-home-btn">
         <i className="bi bi-arrow-left"></i>
         Back to Home
       </Link>

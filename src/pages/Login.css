@@ -33,23 +33,6 @@
     background: #198754;
 }
 
-.back-home {
-    position: absolute;
-    top: 25px;
-    left: 50px;
-    background: #198754;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.back-home:hover {
-    background: #146c43;
-}
-
 .login-card {
     width: 400px;
     background: white;
@@ -191,15 +174,19 @@
         width: 90%;
         max-width: 420px;
     }
-    .back-home {
-        left: 20px;
+    .home-btn {
         top: 20px;
+        left: 20px;
     }
 }
 
 @media (max-width:480px) {
     .login-container {
         padding: 20px 12px;
+    }
+    .home-btn {
+        font-size: 13px;
+        padding: 7px 10px;
     }
     .login-card {
         padding: 25px 18px;
@@ -224,10 +211,6 @@
     .google-btn {
         padding: 12px;
         font-size: 14px;
-    }
-    .back-home {
-        font-size: 14px;
-        padding: 8px 15px;
     }
     .register-text {
         font-size: 14px;
@@ -254,11 +237,6 @@
     }
     .login-card p {
         font-size: 15px;
-    }
-    .back-home {
-        position: static;
-        margin-bottom: 20px;
-        display: inline-block;
     }
     .login-options {
         flex-direction: column;

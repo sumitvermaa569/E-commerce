@@ -14,7 +14,7 @@
 
 /* Back Button */
 
-.home-btn {
+.contact-home-btn {
     position: absolute;
     top: 30px;
     left: 40px;
@@ -30,7 +30,7 @@
     transition: .3s;
 }
 
-.home-btn:hover {
+.contact-home-btn:hover {
     background: #146c43;
     transform: translateY(-3px);
 }
@@ -191,7 +191,7 @@ Tablet
     .contact-box {
         text-align: center;
     }
-    .home-btn {
+    .contact-home-btn {
         position: static;
         margin-bottom: 30px;
         display: inline-flex;
@@ -205,7 +205,7 @@ Mobile
 
 @media(max-width:768px) {
     .contact-page {
-        padding: 40px 20px;
+        padding: 80px 20px 40px;
     }
     .contact-header {
         margin-bottom: 40px;
@@ -245,7 +245,7 @@ Small Mobile
     .contact-page {
         padding: 25px 15px;
     }
-    .home-btn {
+    .contact-home-btn {
         width: 100%;
         justify-content: center;
     }
