@@ -31,16 +31,16 @@ function Contact() {
             <i className="bi bi-telephone-fill"></i>
             <div>
               <h3>Phone</h3>
-              <p>+91 8492061003</p>
-            </div>
+<a href="tel:+918492061003">+91 8492061003</a>            </div>
           </div>
 
           <div className="info-card">
             <i className="bi bi-envelope-fill"></i>
             <div>
               <h3>Email</h3>
-              <p>pakhetramart@gmail.com</p>
-            </div>
+<a href="mailto:pakhetramart@gmail.com">
+  pakhetramart@gmail.com
+</a>            </div>
           </div>
 
           <div className="info-card">

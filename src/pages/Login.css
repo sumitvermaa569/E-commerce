@@ -34,6 +34,11 @@
     padding: 35px;
     border-radius: 15px;
     box-shadow: 0 10px 35px rgba(0, 0, 0, .12);
+    transition: .3s;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
 }
 
 .login-card h1 {
@@ -55,6 +60,10 @@
     border-radius: 10px;
     padding: 12px;
     margin-bottom: 18px;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
 }
 
 .input-group input {
@@ -95,10 +104,12 @@
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
+    transition: .3s;
 }
 
 .login-btn:hover {
-    background: #157347;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(25, 135, 84, .3);
 }
 
 .divider {
@@ -151,4 +162,79 @@
     text-decoration: none;
     color: #198754;
     font-weight: bold;
+}
+
+@media (max-width:992px) {
+    .login-card {
+        width: 90%;
+        max-width: 420px;
+    }
+    .back-home {
+        left: 20px;
+        top: 20px;
+    }
+}
+
+@media (max-width:480px) {
+    .login-container {
+        padding: 20px 12px;
+    }
+    .login-card {
+        padding: 25px 18px;
+        border-radius: 15px;
+    }
+    .login-card h1 {
+        font-size: 26px;
+    }
+    .login-card p {
+        font-size: 14px;
+    }
+    .input-group {
+        padding: 10px;
+    }
+    .input-group input {
+        font-size: 14px;
+    }
+    .login-btn {
+        padding: 13px;
+        font-size: 15px;
+    }
+    .google-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+    .back-home {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    .register-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:768px) {
+    .login-container {
+        padding: 30px 15px;
+    }
+    .login-card {
+        width: 100%;
+        max-width: 420px;
+        padding: 30px 25px;
+    }
+    .login-card h1 {
+        font-size: 30px;
+    }
+    .login-card p {
+        font-size: 15px;
+    }
+    .back-home {
+        position: static;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    .login-options {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
 }

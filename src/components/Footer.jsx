@@ -8,6 +8,8 @@ function Footer({ setShowCart }) {
       <div className="footer-container">
         {/* Company */}
         <div className="footer-column">
+<img src={logo2} alt="Pakhetra Mart" className="footer-logo" />
+
           <h2>Pakhetra's Mart</h2>
 
           <p>Your one-stop shop for stationery, food, drinks and ice creams.</p>
@@ -24,7 +26,7 @@ function Footer({ setShowCart }) {
 
           <p>
             <i className="bi bi-envelope-fill"></i>
-            sumitvermaa569@gmail.comn{" "}
+            sumitvermaa569@gmail.com{" "}
           </p>
         </div>
 

@@ -68,13 +68,17 @@ function App() {
   );
 
   const filteredProducts = products.filter((product) => {
-    const search = searchTerm.toLowerCase();
+  // Search filter
+  const matchesSearch =
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    product.category.toLowerCase().includes(searchTerm.toLowerCase());
+ // Category filter
+  const matchesCategory =
+    selectedCategory === "all" ||
+    product.category.toLowerCase() === selectedCategory.toLowerCase();
 
-    return (
-      product.name.toLowerCase().includes(search) ||
-      product.category.toLowerCase().includes(search)
-    );
-  });
+  return matchesSearch && matchesCategory;
+});
 
   return (
     <>

@@ -124,21 +124,31 @@
     }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
     .hero {
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
-        padding: 40px 20px;
+        padding: 50px 20px;
     }
     .hero-left,
     .hero-right {
         width: 100%;
     }
-    .hero-right img {
-        width: 80%;
-        margin-top: 30px;
+    .hero h1 {
+        font-size: 40px;
+    }
+    .hero p {
+        font-size: 17px;
     }
     .hero-buttons {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+    .hero-features {
+        justify-content: center;
+    }
+    .hero-right img {
+        width: 85%;
+        margin-bottom: 30px;
     }
 }

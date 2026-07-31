@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
-  const [showPassword, serShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="login-container">
       <Link to="/" className="back-home">
@@ -11,9 +11,12 @@ function Login() {
       </Link>
 
       <div className="login-card">
-        <h1>Welcome👋</h1>
-        <p>Login to continue shopping at pakhetra mart</p>
+        <h1>Welcome Back 👋</h1>
 
+        <p>
+          Sign in to continue shopping at
+          <strong> Pakhetra's Mart</strong>
+        </p>
         <form>
           <div className="input-group">
             <i className="bi bi-person" />
