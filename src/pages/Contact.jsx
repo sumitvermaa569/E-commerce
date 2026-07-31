@@ -2,7 +2,7 @@ import "./Contact.css";
 import { Link } from "react-router-dom";
 
 function Contact() {
-  const phoneNumber = "919876543210"; // Replace with your WhatsApp number
+  const phoneNumber = "8492061003"; // Replace with your WhatsApp number
 
   return (
     <div className="contact-page">
@@ -39,7 +39,7 @@ function Contact() {
             <div>
               <h3>Email</h3>
 <a href="mailto:pakhetramart@gmail.com">
-  pakhetramart@gmail.com
+  sumitvermaa569@gmail.com
 </a>            </div>
           </div>
 
