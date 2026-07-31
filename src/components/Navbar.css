@@ -132,25 +132,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
+        gap: 5px;
         text-decoration: none;
         color: white;
         background: #198754;
-        padding: 10px 18px;
-        border-radius: 8px;
-        font-size: 15px;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-size: 14px;
         font-weight: 600;
-        transition: 0.3s;
-        height: 42px;
+        height: 38px;
+        white-space: nowrap;
+    }
+    
+    .login-btn i {
+        font-size: 18px;
     }
     
     .login-btn:hover {
         background: #146c43;
         color: white;
-    }
-    
-    .login-btn i {
-        font-size: 20px;
     }
     /* Responsive */
     
@@ -280,14 +280,19 @@
             justify-content: center;
             gap: 30px;
         }
-        .login-btn span {
-            display: none;
+        .login-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            padding: 8px 12px;
+            height: 38px;
+        }
+        .login-btn i {
+            font-size: 18px;
         }
         .cart-btn {
             font-size: 30px;
-        }
-        .login-btn {
-            font-size: 28px;
         }
     }
     
